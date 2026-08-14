@@ -94,12 +94,6 @@ input[type=date]:focus{
     box-shadow:0 0 5px rgba(37,99,235,0.25);
 }
 
-/* Labels */
-
-label{
-    margin-right:15px;
-}
-
 /* Radio Buttons */
 
 input[type=radio]{
@@ -115,7 +109,7 @@ input[type=checkbox]{
     accent-color:#2563eb;
 }
 
-/* Online Event Banner */
+/* Event Banner */
 
 .event-banner{
     width:300px;
@@ -138,8 +132,7 @@ input[type=checkbox]{
 
     border:2px solid #cbd5e1;
 
-    box-shadow:
-        0 4px 10px rgba(0,0,0,0.15);
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
 
     display:flex;
     align-items:center;
@@ -231,11 +224,29 @@ button{
     box-shadow:0 5px 12px rgba(220,38,38,0.4);
 }
 
-/* Small Text Styling */
+/* Success Message */
 
-td b{
-    display:inline-block;
-    padding-top:5px;
+.success-message{
+    display:none;
+    margin-top:20px;
+    padding:15px;
+    text-align:center;
+    background:#dcfce7;
+    color:#166534;
+    border:1px solid #86efac;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    box-shadow:0 3px 8px rgba(22,163,74,0.15);
+}
+
+/* Success Heading */
+
+.success-message span{
+    display:block;
+    margin-top:5px;
+    font-size:13px;
+    font-weight:normal;
 }
 
 /* Mobile Responsive */
@@ -278,6 +289,7 @@ td b{
     button{
         margin:7px;
     }
+
 }
 
 </style>
@@ -290,37 +302,57 @@ td b{
 
 <h1>Online Event Registration Portal</h1>
 
-<form>
+<form id="registrationForm">
 
 <table>
 
 <tr>
 <td><b>Student Name</b></td>
+
 <td>
-<input type="text" placeholder="Enter Name" required>
+<input
+    type="text"
+    placeholder="Enter Name"
+    required>
 </td>
 </tr>
+
 
 <tr>
 <td><b>Enrollment No</b></td>
+
 <td>
-<input type="text" placeholder="Enter Enrollment No" required>
+<input
+    type="text"
+    placeholder="Enter Enrollment No"
+    required>
 </td>
 </tr>
+
 
 <tr>
 <td><b>Email</b></td>
+
 <td>
-<input type="email" placeholder="Enter Email" required>
+<input
+    type="email"
+    placeholder="Enter Email"
+    required>
 </td>
 </tr>
 
+
 <tr>
 <td><b>Mobile Number</b></td>
+
 <td>
-<input type="tel" placeholder="Enter Mobile Number" required>
+<input
+    type="tel"
+    placeholder="Enter Mobile Number"
+    required>
 </td>
 </tr>
+
 
 <tr>
 
@@ -330,19 +362,33 @@ td b{
 
 <select required>
 
-<option value="">--Select Department--</option>
+<option value="">
+--Select Department--
+</option>
 
-<option>Computer Engineering</option>
+<option>
+Computer Engineering
+</option>
 
-<option>Information Technology</option>
+<option>
+Information Technology
+</option>
 
-<option>Mechanical Engineering</option>
+<option>
+Mechanical Engineering
+</option>
 
-<option>Civil Engineering</option>
+<option>
+Civil Engineering
+</option>
 
-<option>Electrical Engineering</option>
+<option>
+Electrical Engineering
+</option>
 
-<option>Electronics & Communication</option>
+<option>
+Electronics & Communication
+</option>
 
 </select>
 
@@ -350,23 +396,32 @@ td b{
 
 </tr>
 
+
 <tr>
 
 <td><b>Gender</b></td>
 
 <td>
 
-<input type="radio" name="gender" required>
+<input
+    type="radio"
+    name="gender"
+    required>
+
 Male
 
 <br>
 
-<input type="radio" name="gender">
+<input
+    type="radio"
+    name="gender">
+
 Female
 
 </td>
 
 </tr>
+
 
 <tr>
 
@@ -401,17 +456,21 @@ Technical Workshop
 
 </tr>
 
+
 <tr>
 
 <td><b>Select Date</b></td>
 
 <td>
 
-<input type="date" required>
+<input
+    type="date"
+    required>
 
 </td>
 
 </tr>
+
 
 <tr>
 
@@ -423,7 +482,9 @@ Technical Workshop
 
 <div class="banner-content">
 
-<h2>ONLINE EVENT MANAGEMENT</h2>
+<h2>
+ONLINE EVENT MANAGEMENT
+</h2>
 
 <p>
 Register Now & Participate in Exciting Events!
@@ -443,21 +504,74 @@ Register Now & Participate in Exciting Events!
 
 </table>
 
+
 <div class="button">
 
-<button class="submit" type="submit">
+<button
+    class="submit"
+    type="submit">
+
 Register
+
 </button>
 
-<button class="reset" type="reset">
+
+<button
+    class="reset"
+    type="reset">
+
 Reset
+
 </button>
+
+</div>
+
+
+<!-- Success Message -->
+
+<div
+    class="success-message"
+    id="successMessage">
+
+✅ Registration Successful!
+
+<span>
+Your event registration has been completed successfully.
+</span>
 
 </div>
 
 </form>
 
 </div>
+
+
+<script>
+
+/* Registration Submit */
+
+document.getElementById("registrationForm")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    document.getElementById("successMessage")
+    .style.display = "block";
+
+});
+
+
+/* Reset Button */
+
+document.getElementById("registrationForm")
+.addEventListener("reset", function(){
+
+    document.getElementById("successMessage")
+    .style.display = "none";
+
+});
+
+</script>
 
 </body>
 
