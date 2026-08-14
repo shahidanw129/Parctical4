@@ -1,8 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Online Event Registration Portal</title>
 
 <style>
@@ -113,22 +115,70 @@ input[type=checkbox]{
     accent-color:#2563eb;
 }
 
-/* Banner Image */
+/* Online Event Banner */
 
-img{
+.event-banner{
     width:300px;
     height:160px;
-    object-fit:cover;
-    border:2px solid #cbd5e1;
     border-radius:10px;
     margin-top:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    overflow:hidden;
+    position:relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30,58,138,0.92),
+            rgba(37,99,235,0.70)
+        ),
+        url("Properties/Launch%20Pad.jpeg");
+
+    background-size:cover;
+    background-position:center;
+
+    border:2px solid #cbd5e1;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.15);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
     transition:0.3s;
 }
 
-img:hover{
+/* Banner Content */
+
+.banner-content{
+    color:white;
+    padding:15px;
+}
+
+.banner-content h2{
+    margin:0 0 8px;
+    font-size:21px;
+    font-weight:bold;
+    text-shadow:0 2px 4px rgba(0,0,0,0.4);
+}
+
+.banner-content p{
+    margin:5px 0 10px;
+    font-size:12px;
+    line-height:1.5;
+}
+
+.banner-content span{
+    font-size:10px;
+    font-weight:bold;
+}
+
+/* Banner Hover */
+
+.event-banner:hover{
     transform:scale(1.02);
-    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+    box-shadow:0 6px 15px rgba(0,0,0,0.25);
 }
 
 /* Button Area */
@@ -220,9 +270,9 @@ td b{
         max-width:100%;
     }
 
-    img{
+    .event-banner{
         width:100%;
-        height:auto;
+        height:180px;
     }
 
     button{
@@ -246,92 +296,149 @@ td b{
 
 <tr>
 <td><b>Student Name</b></td>
-<td><input type="text" placeholder="Enter Name" required></td>
+<td>
+<input type="text" placeholder="Enter Name" required>
+</td>
 </tr>
 
 <tr>
 <td><b>Enrollment No</b></td>
-<td><input type="text" placeholder="Enter Enrollment No" required></td>
+<td>
+<input type="text" placeholder="Enter Enrollment No" required>
+</td>
 </tr>
 
 <tr>
 <td><b>Email</b></td>
-<td><input type="email" placeholder="Enter Email" required></td>
+<td>
+<input type="email" placeholder="Enter Email" required>
+</td>
 </tr>
 
 <tr>
 <td><b>Mobile Number</b></td>
-<td><input type="tel" placeholder="Enter Mobile Number" required></td>
+<td>
+<input type="tel" placeholder="Enter Mobile Number" required>
+</td>
 </tr>
 
 <tr>
+
 <td><b>Department</b></td>
+
 <td>
 
 <select required>
 
 <option value="">--Select Department--</option>
+
 <option>Computer Engineering</option>
+
 <option>Information Technology</option>
+
 <option>Mechanical Engineering</option>
+
 <option>Civil Engineering</option>
+
 <option>Electrical Engineering</option>
+
 <option>Electronics & Communication</option>
 
 </select>
 
 </td>
+
 </tr>
 
 <tr>
+
 <td><b>Gender</b></td>
 
 <td>
 
-<input type="radio" name="gender"> Male
+<input type="radio" name="gender" required>
+Male
+
 <br>
 
-<input type="radio" name="gender"> Female
+<input type="radio" name="gender">
+Female
 
 </td>
+
 </tr>
 
 <tr>
+
 <td><b>Select Events</b></td>
 
 <td>
 
-<input type="checkbox"> Coding Competition<br>
+<input type="checkbox">
+Coding Competition
 
-<input type="checkbox"> Poster Presentation<br>
+<br>
 
-<input type="checkbox"> Project Expo<br>
+<input type="checkbox">
+Poster Presentation
 
-<input type="checkbox"> Quiz Competition<br>
+<br>
 
-<input type="checkbox"> Technical Workshop
+<input type="checkbox">
+Project Expo
+
+<br>
+
+<input type="checkbox">
+Quiz Competition
+
+<br>
+
+<input type="checkbox">
+Technical Workshop
 
 </td>
+
 </tr>
 
 <tr>
+
 <td><b>Select Date</b></td>
 
 <td>
 
-<input type="date">
+<input type="date" required>
 
 </td>
+
 </tr>
 
 <tr>
+
 <td><b>Banner</b></td>
 
 <td>
 
-<img src="Properties/Launch%20Pad.jpeg" />
+<div class="event-banner">
+
+<div class="banner-content">
+
+<h2>ONLINE EVENT MANAGEMENT</h2>
+
+<p>
+Register Now & Participate in Exciting Events!
+</p>
+
+<span>
+🎓 Coding • Quiz • Project Expo • Workshop
+</span>
+
+</div>
+
+</div>
 
 </td>
+
 </tr>
 
 </table>
@@ -353,4 +460,5 @@ Reset
 </div>
 
 </body>
+
 </html>
